@@ -24,6 +24,7 @@ const ChatMessage = ({ message }: { message: Message }) => {
                 borderRadius="md"
                 bg={message.originChainId === chain?.id ? 'blue.500' : 'gray.300'}
                 color={message.originChainId === chain?.id ? 'white' : 'black'}
+                opacity={message.status === 'delivered'? 1 : 0.5}
             >
                 {hexToString(message.body as `0x${string}`)}
             </Text>
